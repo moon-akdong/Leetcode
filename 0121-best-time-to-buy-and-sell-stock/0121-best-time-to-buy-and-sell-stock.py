@@ -15,11 +15,8 @@ class Solution(object):
         max_num = 0
         min_num = sys.maxsize
         for i in prices:
-            max_num = max(i,max_num)
             min_num = min(i,min_num)
-            if min_num == i:
-                max_num = i 
-            price = max(price,max_num - min_num) 
+            price = max(price,i - min_num) 
         return price
 
 
