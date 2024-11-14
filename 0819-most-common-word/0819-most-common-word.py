@@ -9,7 +9,7 @@ class Solution(object):
         # 대소문자 구분을 하지 않으며, 구두점 또한 무시한다.
 
         # , 구두점 무시
-        paragraph = re.sub("[^a-zA-Z ]",'',paragraph)
+        paragraph = re.sub("[^a-zA-Z ]",' ',paragraph)
         # 대소문자 구분 하지 않는다.
         words = paragraph.lower().split()
 
@@ -18,7 +18,6 @@ class Solution(object):
         max_words = ""
         counter = 0
         for word,count in words_counter.items():
-            print(word,count)
             if word not in banned and counter < count:
                 counter = count
                 max_words = word
