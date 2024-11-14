@@ -9,13 +9,15 @@ class Solution(object):
 
         # 문자는 그대로 유지하면서, 같은 것 끼리 묶어야 한다. 
         # 인덱스를 사용? 
-        result = [] 
-        words_group = collections.defaultdict(list)
-        for i in strs:
-            
-            word = sorted(i)
-            
-            if words_group not in words_group.keys():
-                words_group[''.join(word)].append(i)
+        # words_group = collections.defaultdict(list)
+        # for i in strs:
+        #     word = sorted(i)
+        #     if words_group not in words_group.keys():
+        #         words_group[''.join(word)].append(i)
 
-        return [words for words in words_group.values()]
+        # return [words for words in words_group.values()]
+
+        words_group = collections.defaultdict(list)
+        for word in strs:
+            words_group["".join(sorted(word))].append(word)
+        return words_group.values()
