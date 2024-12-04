@@ -19,6 +19,7 @@ class Solution(object):
             rev,rev.next,slow = slow,rev,slow.next
         if fast:
             slow = slow.next 
+        # 팰린드롬 판단 
         while rev and rev.val == slow.val:
             slow,rev = slow.next, rev.next
         return not rev 
