@@ -19,7 +19,6 @@ class Solution(object):
             elif (i in map_table.keys() and not stack) or stack.pop() != map_table[i]:
                 return False
 
-        if not stack:
-            return True 
-        return False 
+
+        return False if stack else True 
         
