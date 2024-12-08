@@ -16,9 +16,10 @@ class Solution(object):
             if i not in map_table.keys():
                 stack.append(i)
 
-            elif (i in map_table.keys() and not stack) or stack.pop() != map_table[i]:
+            elif not stack or stack.pop() != map_table[i]:
                 return False
 
 
         return False if stack else True 
+        # return len(stack) == 0
         
