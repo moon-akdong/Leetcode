@@ -9,28 +9,28 @@ class MyStack(object):
         :rtype: None
         """
         self.q.append(x)
-        # 요소 삽입 후 맨 앞에 두는 상태로 재정렬 - main idea
+
         for _ in range(len(self.q)-1):
             self.q.append(self.q.popleft())
-        
 
     def pop(self):
         """
         :rtype: int
         """
         return self.q.popleft()
+        
+
     def top(self):
         """
         :rtype: int
         """
         return self.q[0]
-        
 
     def empty(self):
         """
         :rtype: bool
         """
-        return len(self.q) == 0 
+        return len(self.q) == 0  
 
 
 # Your MyStack object will be instantiated and called as such:
