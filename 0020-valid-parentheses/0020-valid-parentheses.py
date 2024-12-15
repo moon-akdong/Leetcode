@@ -11,15 +11,13 @@ class Solution(object):
             '}':'{',
             ']':'[',
         }
+
         stack = [] 
-        for i in s: 
-            if i not in map_table.keys():
-                stack.append(i)
+        for char in s: 
+            if char in map_table.keys():
 
-            elif not stack or stack.pop() != map_table[i]:
-                return False
-
-
-        return False if stack else True 
-        # return len(stack) == 0
-        
+                if not stack or stack.pop() != map_table[char]:
+                    return False 
+            else:
+                stack.append(char)
+        return True if not stack else False 
