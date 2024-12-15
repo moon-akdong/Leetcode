@@ -66,17 +66,18 @@ class MyCircularDeque(object):
         """
         :rtype: int
         """
-        if self.isEmpty():
-            return -1 
-        return self.head.right.val
-        
+        # if self.isEmpty():
+        #     return -1 
+        # return self.head.right.val
+        return self.head.right.val if self.present else -1 
     def getRear(self):
         """
         :rtype: int
         """
-        if self.present ==0:
-            return -1 
-        return self.tail.left.val
+        # if self.present ==0:
+        #     return -1 
+        # return self.tail.left.val
+        return self.tail.left.val if self.present else -1 
 
     def isEmpty(self):
         """
