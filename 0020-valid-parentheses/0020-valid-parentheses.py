@@ -6,7 +6,7 @@ class Solution(object):
         """
         if not s or len(s)<2:
             return False
-        map_table = {
+        table = {
             ')':'(',
             '}':'{',
             ']':'[',
@@ -14,10 +14,9 @@ class Solution(object):
 
         stack = [] 
         for char in s: 
-            if char in map_table.keys():
-
-                if not stack or stack.pop() != map_table[char]:
-                    return False 
-            else:
+            if char not in table:
                 stack.append(char)
+            elif not stack or table[char] != stack.pop():
+                return False 
+                
         return True if not stack else False 
