@@ -14,9 +14,10 @@ class Solution(object):
 
         stack = [] 
         for char in s: 
-            if char not in table:
+            if char not in table: # table.keys() 하면 더 느려짐 
                 stack.append(char)
             elif not stack or table[char] != stack.pop():
                 return False 
-                
-        return True if not stack else False 
+
+        return len(stack) == 0 
+        # True if not stack else False 
