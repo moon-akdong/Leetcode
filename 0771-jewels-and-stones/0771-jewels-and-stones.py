@@ -8,6 +8,8 @@ class Solution(object):
         freqs = {}
         count =0 
 
+        # 해시맵으로 만든다. 
+        # collections.Counter(stones)
         for char in stones:
             if char not in freqs:
                 freqs[char] = 1 
