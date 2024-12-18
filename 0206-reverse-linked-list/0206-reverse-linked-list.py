@@ -6,16 +6,15 @@
 class Solution(object):
     def reverseList(self, head):
         """
-        :type head: ListNode
-        :rtype: ListNode
+        :type head: Optional[ListNode]
+        :rtype: Optional[ListNode]
         """
+        root = head 
+        prev = None 
 
-        # 새로운 저장소 
-        l1 = None
-        while head:
-            # l1.val을 하면 오류가 나는데? - l1.val이 None이기 떄문에
-            # l1.val,l1.next,head = head.val, l1,head.next
-            head.next,next = l1,head.next 
-            l1,head = head, next
-        return l1 
-
+        while root:
+            next,root.next = root.next, prev 
+            # root = 1->None , next = 2->3->4->5
+            prev , root = root , next
+            # root = 2->3->4->5,prev : 1-> None 
+        return prev 
