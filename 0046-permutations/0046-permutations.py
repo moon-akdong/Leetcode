@@ -1,7 +1,7 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         result = [] 
-        next_elements, prev = [],[]
+        prev = []
         def dfs(elements):
             if len(elements)==0:
                 result.append(prev[:])
