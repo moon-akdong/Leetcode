@@ -1,23 +1,16 @@
-class Solution(object):
-    def permute(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
         result = [] 
-        prev = [] 
-
-        def dfs(ls):
-            # 리프 노드일 때 겨로가 추가 
-            if len(ls) == 0:
+        next_elements, prev = [],[]
+        def dfs(elements):
+            if len(elements)==0:
                 result.append(prev[:])
-                return 
-            
-            for i in ls:
-                next_ls = ls[:]
-                next_ls.remove(i)
+            for i in elements:
+                next_elements = elements[:]
+                next_elements.remove(i)
+
                 prev.append(i)
-                dfs(next_ls)
-                prev.pop() # 백 트래킹? 
-        dfs(nums)
+                dfs(next_elements)
+                prev.pop()
+        dfs(nums[:])
         return result
